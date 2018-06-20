@@ -14,7 +14,8 @@ gulp.task('serve', ['styles'], function() {
     });
 
     gulp.watch('assets/sass/**/*.scss',['styles']);
-    gulp.watch(["assets/**/*.html","assets/**/*.js"]).on('change', browserSync.reload);
+    // gulp.watch(["assets/**/*.html","assets/**/*.js"]).on('change', browserSync.reload);
+    gulp.watch(["*.html","assets/**/*.js"]).on('change', browserSync.reload);
 });
 // "assets/**/*.css"
 

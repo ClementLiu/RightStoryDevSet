@@ -133,6 +133,9 @@
 		border-bottom: dotted 1px _palette(fg);
 		color: inherit;
 		text-decoration: none;
+		&.noDot{
+			border:0;
+		}
 
 		&:hover {
 			border-bottom-color: transparent !important;
@@ -154,7 +157,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: _palette(fg-bold);
+		// color: _palette(fg-bold);
 		line-height: 1em;
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
 
@@ -370,14 +373,14 @@
 		&.major {
 			margin: 0 0 (_size(element-margin) * 0.5) 0;
 
-			&:after {
-				background: _palette(border);
-				content: '';
-				display: inline-block;
-				height: 1px;
-				margin-top: (_size(element-margin) * 0.75);
-				width: 6em;
-			}
+			// &:after {
+			// 	background: _palette(border);
+			// 	content: '';
+			// 	display: inline-block;
+			// 	height: 1px;
+			// 	margin-top: (_size(element-margin) * 0.75);
+			// 	width: 6em;
+			// }
 
 			h2, h3, h4, h5, h6 {
 				margin: 0;
@@ -647,7 +650,7 @@
 
 		&.fit {
 			display: block;
-			margin: 0 0 _size(element-margin) 0;
+			margin: 0 0 _size(img-margin) 0;
 			width: 100%;
 
 			img {
@@ -824,7 +827,8 @@
 
 		li {
 			display: inline-block;
-			padding: 2.5em;
+			// padding: 2.5em;
+			padding: 0 2.5em 0 2.5em;
 			text-align: center;
 
 			.icon {
@@ -1089,11 +1093,28 @@
 			background: _palette(bg);
 		}
 
+		// &.style2 {
+		// 	@include dark(#333);
+		// 	background-attachment:	fixed,							fixed;
+		// 	background-image:		url('images/overlay1.png'),		url('../../images/header.jpg');
+		// 	background-size:		auto,							cover;
+		// }
 		&.style2 {
 			@include dark(#333);
 			background-attachment:	fixed,							fixed;
-			background-image:		url('images/overlay1.png'),		url('../../images/header.jpg');
+			background-image:		url('images/overlay1.png'),		url('../../images/BunniesImg.jpg');
 			background-size:		auto,							cover;
+		}
+		&.styleY {
+			background: _palette(bgY);
+			color: _palette(bg);
+		}
+		&.small{
+			// @include padding(0em, 0);
+			padding: 0em 0 0em 0;
+			& header.major{
+				margin: 2em 0 (_size(element-margin) * 0.5) 0;
+			}
 		}
 	}
 
@@ -1101,9 +1122,9 @@
 
 	#header {
 		@include padding(9em, 0, (0,0,_size(element-margin),0));
-		@include dark(#4686a0);
+		@include dark(#000);
 		background-attachment:	fixed,							fixed,							fixed;
-		background-image:		url('images/overlay2.png'),		url('images/overlay3.svg'),		linear-gradient(45deg, _palette(accent1-alt) 5%, _palette(accent3-alt) 30%, _palette(accent6-alt));
+		background-image:		url('images/	.png'),		url('images/Curve.svg'),		linear-gradient(45deg, _palette(accent1-alt) 5%, _palette(accen2-alt) 30%, _palette(accent6-alt));
 		background-position:	top left,						center center,					center center;
 		background-size:		auto,							cover,							cover;
 		overflow: hidden;
@@ -1131,7 +1152,7 @@
 			}
 
 			&:after {
-				background: _palette(dark, border);
+				background: _palette(border);
 				content: '';
 				height: 100vh;
 				left: 50%;
@@ -1191,11 +1212,11 @@
 /* Footer */
 
 	#footer {
-		@include padding(6em, 0, (0,0,_size(element-margin),0));
+		@include padding(2em, 0, (0,0,_size(element-margin),0));
 		@include dark(#4686a0);
 		background-attachment:	fixed,							fixed,							fixed;
-		background-image:		url('images/overlay2.png'),		url('images/overlay4.svg'),		linear-gradient(45deg, _palette(accent6-alt), _palette(accent3-alt) 50%, _palette(accent1-alt) 95%);
-		background-position:	top left,						center center,					center center;
+		background-image:		url('images/overlay2.png'),		url('images/Curve.svg'),		linear-gradient(45deg, _palette(accent6-alt), _palette(accent3-alt) 50%, _palette(accent1-alt) 95%);
+		background-position:	top left,						top right,					center center;
 		background-size:		auto,							cover,							cover;
 		text-align: center;
 
