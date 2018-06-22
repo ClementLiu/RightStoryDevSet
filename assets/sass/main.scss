@@ -472,7 +472,7 @@
 		padding: 0.75em 1em;
 	}
 
-	input[type="checkbox"],
+	input[type="checkbox"].original,
 	input[type="radio"], {
 		@include vendor('appearance', 'none');
 		display: block;
@@ -1003,6 +1003,74 @@
 			cursor: default;
 			opacity: 0.25;
 		}
+	}
+	.holder{
+		display: inline-block;
+	    width: 56px;
+	    height: 40px;
+	    margin: 20px auto;
+	    top: -6px;
+	    position: relative;
+	    &:after{
+	    	background-color: #fff;
+		    content: '';
+		    display: block;
+		    height: 28px;
+		    width: 52px;
+		    position: absolute;
+		    top: 1px;
+		    left: 1px;
+		    z-index: 1;
+		    border-radius: 14px;
+		    transition: all .4s ease;
+			    }
+
+		span {
+		    background-color: #e2e2e2;
+		    display: block;
+		    height: 30px;
+		    width: 54px;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: 2;
+		    border-radius: 15px;
+		    transition: all .5s ease;
+		}
+		label {
+		    background: #fff;
+		    cursor: pointer;
+		    display: block;
+		    height: 28px;
+		    width: 28px;
+		    position: absolute;
+		    top: 1px;
+		    left: 1px;
+		    z-index: 3;
+		    border-radius: 50%;
+		    transition: all .4s ease;
+		    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+		}
+
+	    .check-ios {
+		    visibility: hidden;
+		}
+		.check-ios:checked~span {
+	    /* background-color: #4FD065; */
+		    background-color: yellow;
+		}
+		.check-ios:checked~span:after {
+		    height: 0;
+		    width: 0;
+		    left: 50%;
+		    top: 50%;
+		}
+		.check-ios:checked+label {
+		    left: 25px;
+}
+	}
+	span[alt~=new]{
+		color: _palette(function, font-bold);
 	}
 
 // Dark (mixin)
