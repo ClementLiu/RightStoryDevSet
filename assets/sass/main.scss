@@ -371,8 +371,10 @@
 		}
 
 		&.major {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
-
+			margin: 1em 0 (_size(element-margin) * 0.5) 0;
+			&.middle{
+				margin: 1em 0 1em 0;
+			}
 			// &:after {
 			// 	background: _palette(border);
 			// 	content: '';
@@ -1071,6 +1073,10 @@
 	}
 	span[alt~=new]{
 		color: _palette(function, font-bold);
+		// color: _palette(dark, border-bg);
+		font-family: _font(family);
+		font-weight: _font(weight-bold);
+		font-family: 400;
 	}
 
 // Dark (mixin)
